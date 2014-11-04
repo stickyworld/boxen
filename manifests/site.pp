@@ -83,6 +83,12 @@ node default {
       'gnu-tar'
     ]:
   }
+  
+  #more stuff useful for web development
+  include chrome
+  include firefox
+  include java
+  include gpgtools
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
