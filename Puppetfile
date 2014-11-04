@@ -61,3 +61,6 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 
 github "java",        "1.6.1"
+github "chrome"       "1.2.0"
+github "firefox"      "1.2.3"
+github "gpgtools"     "1.0.2"
