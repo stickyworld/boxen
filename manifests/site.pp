@@ -87,8 +87,27 @@ node default {
   #more stuff useful for web development
   include chrome
   include firefox
+  include googledrive
   include java
   include gpgtools
+  include wget
+  include macvim
+  include textmate::textmate2::release
+  include ghostscript
+  include vmware_fusion
+  
+  class { 'intellij':
+    edition => 'ultimate',
+    version => '13.1.1'
+  }
+  
+  package { 'imagemagick':
+    ensure => present,
+    install_options => [
+      '--with-ghostscript'
+    ],
+    require => Package['ghostscript']
+  }
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
