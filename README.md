@@ -1,18 +1,12 @@
-# Our Boxen
+# Stickyworld Boxen for new Macs
 
-This is a template Boxen project designed for your organization to fork and
-modify appropriately.
-The Boxen rubygem and the Boxen puppet modules are only a framework for getting
-things done.
-This repository template is just a basic example of _how_ to do things with them.
+This contains the base template for programs required for development in Stickyworld.
 
 ## Getting Started
 
 To give you a brief overview, we're going to:
 
-* Install dependencies (basically Xcode)
-* Bootstrap a boxen for your self/team/org/company
-* Then convert your local copy of that boxen to the post-bootstrapped version
+* Install dependencies (basically Xcode with command line tools)
 
 There are a few potential conflicts to keep in mind.
 Boxen does its best not to get in the way of a dirty system,
@@ -43,44 +37,6 @@ If you are using [`b26abd0` of boxen-web](https://github.com/boxen/boxen-web/com
 or newer, it will be automatically installed as part of Boxen.
 Otherwise, follow instructions below.
 
-#### OS X < 10.9
-
-1. Install Xcode from the Mac App Store.
-1. Open Xcode.
-1. Open the Preferences window (`Cmd-,`).
-1. Go to the Downloads tab.
-1. Install the Command Line Tools.
-
-### Bootstrapping
-
-Create a **new** git repository somewhere on the internet.
-It can be private or public -- it really doesn't matter.
-If you're making a repository on GitHub, you _may not_ want to fork this repo
-to get started.
-The reason for that is that you can't really make private forks of public
-repositories easily.
-
-Once you've done that, you can run the following to bootstrap
-your boxen:
-
-```
-sudo mkdir -p /opt/boxen
-sudo chown ${USER}:staff /opt/boxen
-git clone https://github.com/boxen/our-boxen /opt/boxen/repo
-cd /opt/boxen/repo
-git remote rm origin
-git remote add origin <the location of my new git repository>
-git push -u origin master
-```
-
-Now that your boxen is bootstrapped, you can run the following to
-install the default configuration from this repo:
-
-```
-cd /opt/boxen/repo
-./script/boxen
-```
-
 ### Distributing
 
 That's enough to get your boxen into a usable state on other machines,
@@ -94,7 +50,7 @@ If you _don't_ want to use boxen-web, folks can get using your boxen like so:
 ```
 sudo mkdir -p /opt/boxen
 sudo chown ${USER}:staff /opt/boxen
-git clone <location of my new git repository> /opt/boxen/repo
+git clone <location of the git repository> /opt/boxen/repo
 cd /opt/boxen/repo
 ./script/boxen
 ```
@@ -128,7 +84,7 @@ This template project provides the following by default:
 * Homebrew
 * Git
 * Hub
-* dnsmasq w/ .dev resolver for localhost
+* dnsmasq w/ .dev resolver for localhost (disabled)
 * rbenv
 * Full Disk Encryption requirement
 * Node.js 0.6
@@ -305,15 +261,7 @@ It'll just be listed under the boxen org so folks can find it more easily.
 ##upgrading boxen
 See [FAQ-Upgrading](https://github.com/boxen/our-boxen/blob/master/docs/faq.md#q-how-do-you-upgrade-your-boxen-from-the-public-our-boxen).
 
-## Integrating with Github Enterprise
 
-If you're using a Github Enterprise instance rather than github.com,
-you will need to set the `BOXEN_GITHUB_ENTERPRISE_URL` and
-`BOXEN_REPO_URL_TEMPLATE` variables in your
-[Boxen config](config/boxen.rb).
+## Installing imagick
 
-## Halp!
-
-See [FAQ](https://github.com/boxen/our-boxen/blob/master/docs/faq.md).
-
-Use Issues or #boxen on irc.freenode.net.
+When you want to install pecl imagick use this path when it asks you for the imagemagick location `/opt/boxen/homebrew`.
